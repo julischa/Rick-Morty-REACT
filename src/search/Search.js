@@ -1,9 +1,10 @@
 import React from 'react'
     
-let Search = ({ setSearch }) => {
+let Search = ({ setSearch, setPageNumber }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSearch(e.target.value);
+    setSearch(e.target.value); 
+    setPageNumber("");
   }
   return (
     <form className="d-flex justify-content-center">
@@ -14,7 +15,7 @@ let Search = ({ setSearch }) => {
         className=""
       >
       </input>
-      <button className="btn btn-primary">Search</button>
+      <button className="search-button">Search</button>
     </form>
   )
 }
