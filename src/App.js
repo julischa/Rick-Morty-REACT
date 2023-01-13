@@ -14,8 +14,6 @@ function App() {
   console.log(info)
   let api = `https://rickandmortyapi.com/api/character?page=${pageNumber}&name=${search}`;
 
-  //why should I use const instead of let in a state? 
-
   //retrieve data from an API endpoint
   //to update the component's state with the fetched data:
   //((((async function runs in a non-blocking way, meaning that it doesn't stop or block the execution of other code while it's
@@ -25,15 +23,16 @@ function App() {
     setFetchedData(data);
   }
 
-  //the useEffect will run 
+  //the useEffect will run (as side effect) when the search or pageNumber changes
   //"on render"
     useEffect(() => {
     fetchCharacters();
-  }, [search, pageNumber]);
+    }, [search, pageNumber]);
+  //should only run when the search or pageNumber change, 
+  //otherwise it will keep fetching the same data over and over again if they are not included as dependencies
 
 //function sets the pagenumber to 1 when called
- //function checks if there is an info object, and if the next property of info is null, it sets the pageNumber to 1
-//If there is no info object or the next property of info is not null, it increments the pageNumber by 1 
+//If info and next are defined, it takes the slice of the next property starting from 47th index and assign it to the variable nextPage
   const handleNextPage = () => {
     if (info && info.next === null) {
       setPageNumber(1);
@@ -42,6 +41,8 @@ function App() {
       setPageNumber(nextPage);
     }
   };
+
+  //If info and prev are defined, it takes the slice of the prev property starting from 47th index and assign it to the variable prevPage
   const handlePrevPage = () => {
     if (info && info.prev === null) {
       setPageNumber(info.pages);
@@ -56,7 +57,7 @@ function App() {
       <div className="ux-app">
       <h1 className="text-center">Guess who just discovered <br></br>a new element?!</h1>
       <div className="container d-flex flex-wrap justify-content-center">
-      <button className="button" onClick={() => setPageNumber(1)}>↓</button>
+      <button className="button" onClick={() => setPageNumber(1)}>main</button>
       <button className ="button" onClick={handlePrevPage}>←</button>
       <button className="button" onClick={handleNextPage}>→</button>
       <Search setSearch={setSearch}
@@ -75,11 +76,16 @@ function App() {
       <Cards character={character} key={character.id} />
     );
   })}
-            </div>
+          </div>
+          <div className="footer">
+  <h1>Copyright &copy; {new Date().getFullYear()} [adult swim]</h1>
+</div>
           </div>
       </div>
     </div>
+    
   );
 }
+
 
 export default App;
