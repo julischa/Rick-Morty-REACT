@@ -10,7 +10,7 @@ let Search = ({ setSearch, setPageNumber }) => {
     <form className="d-flex justify-content-center">
       <input
         onChange={handleSubmit}
-        placeholder="Search for"
+        placeholder="Search for. . ."
         type="text"
         className=""
       ></input>

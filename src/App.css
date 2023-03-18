@@ -136,6 +136,9 @@ a:visited {
     
   form input {
     font-size: 12px; 
+    padding-left: 0;
+    padding-right: 17px;
+    border-radius: 0%;
   }
 
   .button {
@@ -154,4 +157,8 @@ a:visited {
   #ux-app {
     font-size: 12px;
   }
+}
+
+input {
+  caret-color: green;
 }
