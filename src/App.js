@@ -55,6 +55,9 @@ function App() {
             strings: ["a new element?!"],
             autoStart: true,
             loop: true,
+            cursor: "",
+            delay: 50,
+            cursorClassName: "pink-cursor",
           }}
         />
       </div>

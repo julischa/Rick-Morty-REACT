@@ -161,3 +161,26 @@ a:visited {
   }
 }
 
+
+.pink-cursor::after {
+    content: "";
+    font-family: 'PP Telegraf';
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    margin-left: 5px;
+    background-color: pink;
+    animation: blink 1.3s linear infinite;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
