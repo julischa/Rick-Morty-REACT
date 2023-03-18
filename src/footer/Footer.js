@@ -15,6 +15,8 @@ const Footer = () => {
         <h1 style={{ display: "flex", alignItems: "center" }}>
           <a
             href="https://github.com/julischa"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               color: "white",
               textDecoration: "none",
