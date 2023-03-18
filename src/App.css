@@ -65,6 +65,10 @@ img:hover {
   filter: grayscale(0%);
 }
 
+#lupe {
+    width: 30px;
+}
+
 #github {
   width: 30px;
   transition: transform 0.5s ease-in-out;

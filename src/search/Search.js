@@ -1,4 +1,5 @@
 import React from "react";
+import Lupe from "../assets/search.png";
 
 let Search = ({ setSearch, setPageNumber }) => {
   const handleSubmit = async (e) => {
@@ -14,7 +15,9 @@ let Search = ({ setSearch, setPageNumber }) => {
         type="text"
         className=""
       ></input>
-      <button className="search-button">Search</button>
+      <button className="search-button">
+        <img src={Lupe} alt="Lupe" id="lupe" />
+      </button>
     </form>
   );
 };
