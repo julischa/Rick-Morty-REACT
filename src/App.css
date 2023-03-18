@@ -136,8 +136,7 @@ a:visited {
     
   form input {
     font-size: 12px; 
-    padding-left: 0;
-    padding-right: 17px;
+    width: 180px;
     border-radius: 0%;
   }
 
@@ -159,6 +158,3 @@ a:visited {
   }
 }
 
-input {
-  caret-color: green;
-}
