@@ -13,7 +13,7 @@ let Search = ({ setSearch, setPageNumber }) => {
         onChange={handleSubmit}
         placeholder="Search for. . ."
         type="text"
-        className=""
+        style={{ borderRadius: 0, marginBottom: "10px" }}
       ></input>
       <button className="search-button">
         <img src={Lupe} alt="Lupe" id="lupe" />
