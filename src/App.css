@@ -52,8 +52,31 @@ form input {
   color: white;
 }
 
+.card-container {
+position: relative;
+}
+
+.container > .col-8 > .row:first-child {
+  margin-top: 30px;
+}
+
+
 .character-name {
-  color: white;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.8);
+color: white;
+font-family: 'PP Telegraf', sans-serif;
+padding: 10px;
+text-align: center;
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+}
+
+.card-image:hover + .character-name {
+opacity: 1;
 }
 
 img {
@@ -121,7 +144,8 @@ a:visited {
   }
  
   .search-button {
-    display: none;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   
    .button {
@@ -145,11 +169,11 @@ a:visited {
   }
 
   .button {
-    display: none; 
+    width: 20px;
   }
     
   .search-button {
-    display: none;
+    width: 50px;
   }
     
   .footer h1 {
